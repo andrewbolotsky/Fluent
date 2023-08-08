@@ -69,6 +69,7 @@
 		1270167E2A7D0079001D8099 /* EnvironmentObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjects.swift; sourceTree = "<group>"; };
 		1275EE962A82466D00C8A958 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1275EE982A82468C00C8A958 /* UserLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLanguagesView.swift; sourceTree = "<group>"; };
+		1275EEA22A8262B700C8A958 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		12C6CB052A784E1E0066560A /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		12E721742A7F01BC00F7162F /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		12E968262A74E52A00859D2D /* Fluent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +124,7 @@
 		12E9681D2A74E52A00859D2D = {
 			isa = PBXGroup;
 			children = (
+				1275EEA22A8262B700C8A958 /* README.md */,
 				12E968282A74E52A00859D2D /* Fluent */,
 				12E968392A74E52B00859D2D /* FluentTests */,
 				12E968432A74E52B00859D2D /* FluentUITests */,
