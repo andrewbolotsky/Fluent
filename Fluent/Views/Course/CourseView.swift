@@ -28,7 +28,8 @@ struct CourseView: View {
             VStack{
                 Spacer()
                 Spacer()
-                Text("Your course").bold().font(.largeTitle)
+                Text("Your course ").bold().font(.largeTitle).lineLimit(1)
+                Text("\(course.name)").bold().font(.largeTitle).lineLimit(1)
                 Spacer()
                 Button {
                     course.newAction = true;
@@ -42,9 +43,6 @@ struct CourseView: View {
                     }
                 }
                 .buttonStyle(GeneralButtonStyle()).font(.title).bold().onReceive(course.$newAction,perform: {value in
-                    print()
-                    print("newAction changed and GeneralButtonStyle got it \(value)")
-                    print()
                     if !value{
                         isRotating = 0
                         withAnimation(.linear(duration: 1)
@@ -62,7 +60,7 @@ struct CourseView: View {
                 }
                 Spacer()
                 Spacer()
-            }
+            }.ignoresSafeArea()
         }
         else{
             if course.newLesson == nil{

@@ -27,7 +27,9 @@ enum KnowledgeLevel{
     case C1
     case C2
 }
-class Course:ObservableObject{
+class Course:ObservableObject,Identifiable{
+    var id = UUID()
+    var name = ""
     private var lessons: [Lesson]  = Array()
     private var passedLessonsCount:Int = 0
     private var allLessonsCount:Int
@@ -36,6 +38,11 @@ class Course:ObservableObject{
     @Published var isLessonDone:Bool = false
     @Published var exercisesIndex:Int = 0
     init(lessons: [Lesson],allLessonsCount:Int) {
+        self.lessons = lessons
+        self.allLessonsCount = allLessonsCount
+    }
+    init(name:String,lessons:[Lesson],allLessonsCount:Int){
+        self.name = name
         self.lessons = lessons
         self.allLessonsCount = allLessonsCount
     }
@@ -88,8 +95,8 @@ enum ExerciseType{
     case Reading
     case Speaking
     case WordCards
-    case VideoLesson
-    case Lesson
+    case VideoLearning
+    case Learning
 }
 enum LanguageFrom:Hashable{
     case Russian
@@ -156,7 +163,11 @@ struct WordCards:Exercise{
         var conditionType:Condition = .NewWord
     }
 }
-
+struct CrosswordCell {
+    var isBlocked: Bool
+    var isGuessed: Bool
+    var hint:String = "";
+}
 struct Crossword:Exercise{
     var id: Int
     var complexity: Int
@@ -164,9 +175,29 @@ struct Crossword:Exercise{
     var languageTo: LanguageTo
     @Binding var exerciseIndex: Int
     var type: ExerciseType = ExerciseType.Crossword
-    var crossword:Array<Array<Character>>
-    var correctCrossword:Array<Array<Character>>
-    //TODO
+    var correctAnswers:Array<Array<String>>
+    var crossword:[[CrosswordCell]]
+    var hints:[String]
+    init(id: Int, complexity: Int, languageFrom: LanguageFrom, languageTo: LanguageTo, exerciseIndex: Binding<Int> = .constant(0), correctAnswers: Array<Array<String>>, crossword: [[CrosswordCell]],hints:[String] = Array()) {
+        self.id = id
+        self.complexity = complexity
+        self.languageFrom = languageFrom
+        self.languageTo = languageTo
+        self._exerciseIndex = exerciseIndex
+        self.correctAnswers = correctAnswers
+        self.crossword = crossword
+        self.hints = hints
+    }
+    init(_ crossword:Crossword,index:Binding<Int>){
+        self.id = crossword.id
+        self.complexity = crossword.complexity
+        self.languageFrom = crossword.languageFrom
+        self.languageTo = crossword.languageTo
+        self._exerciseIndex = index
+        self.correctAnswers = crossword.correctAnswers
+        self.crossword = crossword.crossword
+        self.hints = crossword.hints
+    }
 }
 struct WordInsertionWithAnswerOptions:Exercise{
     var id: Int
@@ -274,9 +305,33 @@ struct SpeakingExercise: Exercise{
     var languageFrom:LanguageFrom
     var languageTo:LanguageTo
     @Binding var exerciseIndex: Int
-    var type:ExerciseType
+    var type:ExerciseType = .Speaking
     //TODO
     
 }
-
+struct Learning:Exercise{
+    var id:Int
+    var complexity:Int
+    var languageFrom:LanguageFrom
+    var languageTo:LanguageTo
+    @Binding var exerciseIndex: Int
+    var type:ExerciseType = .Learning
+    var markdownText: String
+    init(id: Int, complexity: Int, languageFrom: LanguageFrom, languageTo: LanguageTo, exerciseIndex: Binding<Int> = .constant(0), markdownText: String) {
+        self.id = id
+        self.complexity = complexity
+        self.languageFrom = languageFrom
+        self.languageTo = languageTo
+        self._exerciseIndex = exerciseIndex
+        self.markdownText = markdownText
+    }
+    init(_ learning:Learning,index:Binding<Int>){
+        self.id = learning.id
+        self.complexity = learning.complexity
+        self.languageTo = learning.languageTo
+        self.languageFrom = learning.languageFrom
+        self._exerciseIndex = index
+        self.markdownText = learning.markdownText
+    }
+}
 

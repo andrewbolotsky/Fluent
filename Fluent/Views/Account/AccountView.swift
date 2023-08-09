@@ -19,9 +19,14 @@ struct AccountView: View {
                         Label("Your languages",systemImage: "globe").font(.title).frame(height: 90)
                     }
                     NavigationLink{
-                        ComingSoonView()
+                        SettingsView().environmentObject(states)
                     }label:{
                         Label("Settings",systemImage: "gear").font(.title).frame(height: 90)
+                    }
+                    NavigationLink{
+                        SettingsView().environmentObject(states)
+                    }label:{
+                        Label("Log out",systemImage: "door.left.hand.open").font(.title).frame(height: 90)
                     }
                 }.navigationTitle("\(states.firstName) \(states.secondName)").bold()
             }

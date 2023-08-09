@@ -15,11 +15,10 @@ extension Lesson: View {
                     switch exercises[course.exercisesIndex].type{
                     case .WordInsertion:
                         WordInsertion(exercises[course.exercisesIndex] as! WordInsertion, index: $course.exercisesIndex)
-                        /*case .Crossword:
-                         (exercises[course.exercisesIndex] as! Crossword).onAppear {
-                         (exercises[course.exercisesIndex] as! SpeakingExercise).exerciseIndex = $course.exercisesIndex
-                         }
-                         */case .WordCards:
+                        case .Crossword:
+                        Crossword( exercises[course.exercisesIndex] as! Crossword,index:$course.exercisesIndex)
+                         
+                         case .WordCards:
                         WordCards(exercises[course.exercisesIndex] as! WordCards, index: $course.exercisesIndex)
                         /*
                          case .Speaking:
@@ -36,21 +35,23 @@ extension Lesson: View {
                          }
                          case .Listening:
                          ComingSoonView()
-                         case .Lesson:
-                         ComingSoonView()
+                         */
+                         case .Learning:
+                        Learning(exercises[course.exercisesIndex] as! Learning,index:$course.exercisesIndex)
+                        /*
                          case .VideoLesson:
                          ComingSoonView()*/
                     default:
                         EmptyView().onAppear{
-                            print("EmptyView in default")
+                            
                         }
                     }
                 }
             }
             else{
                 if newLesson{
-                    Text("hey").onAppear{print()
-                        print("12312312312312312312")
+                    Text("hey").onAppear{
+                        
                         course.deleteLesson()
                         course.exercisesIndex = 0
                         newLesson = false

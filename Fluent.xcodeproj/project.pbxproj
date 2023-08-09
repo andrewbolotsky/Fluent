@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1220CAE82A751DB20072530E /* ReadingExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220CAE72A751DB20072530E /* ReadingExerciseView.swift */; };
-		1237E2172A7A27C6001E9069 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 1237E2162A7A27C6001E9069 /* SwiftProtobuf */; };
-		1237E2192A7A27C6001E9069 /* SwiftProtobufPluginLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 1237E2182A7A27C6001E9069 /* SwiftProtobufPluginLibrary */; };
-		1237E21B2A7A27C6001E9069 /* protoc-gen-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 1237E21A2A7A27C6001E9069 /* protoc-gen-swift */; };
 		1237E21E2A7A4027001E9069 /* SpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1237E21D2A7A4027001E9069 /* SpeakingView.swift */; };
 		12479A142A762DC200EAEEE3 /* WordInsertionExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12479A132A762DC200EAEEE3 /* WordInsertionExerciseView.swift */; };
 		12479A162A7650BF00EAEEE3 /* WordCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12479A152A7650BF00EAEEE3 /* WordCardsView.swift */; };
@@ -20,9 +17,9 @@
 		1270167F2A7D0079001D8099 /* EnvironmentObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270167E2A7D0079001D8099 /* EnvironmentObjects.swift */; };
 		1275EE972A82466D00C8A958 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275EE962A82466D00C8A958 /* SettingsView.swift */; };
 		1275EE992A82468C00C8A958 /* UserLanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275EE982A82468C00C8A958 /* UserLanguagesView.swift */; };
-		1275EE9C2A825AD800C8A958 /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = 1275EE9B2A825AD800C8A958 /* CGRPCZlib */; };
-		1275EE9E2A825AD800C8A958 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 1275EE9D2A825AD800C8A958 /* GRPC */; };
-		1275EEA02A825AD800C8A958 /* protoc-gen-grpc-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 1275EE9F2A825AD800C8A958 /* protoc-gen-grpc-swift */; };
+		12A155132A83A5AB00CD1580 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A155122A83A5AB00CD1580 /* LearningView.swift */; };
+		12A1552D2A83C3CB00CD1580 /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 12A1552C2A83C3CB00CD1580 /* Markdown */; };
+		12A1552F2A83C3CB00CD1580 /* RoomTime in Frameworks */ = {isa = PBXBuildFile; productRef = 12A1552E2A83C3CB00CD1580 /* RoomTime */; };
 		12C6CB062A784E1E0066560A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6CB052A784E1E0066560A /* AccountView.swift */; };
 		12E721752A7F01BC00F7162F /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E721742A7F01BC00F7162F /* Localization.swift */; };
 		12E9682A2A74E52A00859D2D /* FluentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E968292A74E52A00859D2D /* FluentApp.swift */; };
@@ -70,6 +67,7 @@
 		1275EE962A82466D00C8A958 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1275EE982A82468C00C8A958 /* UserLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLanguagesView.swift; sourceTree = "<group>"; };
 		1275EEA22A8262B700C8A958 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		12A155122A83A5AB00CD1580 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		12C6CB052A784E1E0066560A /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		12E721742A7F01BC00F7162F /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		12E968262A74E52A00859D2D /* Fluent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,12 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1237E2192A7A27C6001E9069 /* SwiftProtobufPluginLibrary in Frameworks */,
-				1275EE9E2A825AD800C8A958 /* GRPC in Frameworks */,
-				1275EEA02A825AD800C8A958 /* protoc-gen-grpc-swift in Frameworks */,
-				1275EE9C2A825AD800C8A958 /* CGRPCZlib in Frameworks */,
-				1237E2172A7A27C6001E9069 /* SwiftProtobuf in Frameworks */,
-				1237E21B2A7A27C6001E9069 /* protoc-gen-swift in Frameworks */,
+				12A1552F2A83C3CB00CD1580 /* RoomTime in Frameworks */,
+				12A1552D2A83C3CB00CD1580 /* Markdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +243,7 @@
 				1237E21D2A7A4027001E9069 /* SpeakingView.swift */,
 				1255266A2A7CFAD000DF2AE0 /* CrosswordView.swift */,
 				1255266C2A7CFB0A00DF2AE0 /* WordInsertionsWithAnswersView.swift */,
+				12A155122A83A5AB00CD1580 /* LearningView.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -270,12 +265,8 @@
 			);
 			name = Fluent;
 			packageProductDependencies = (
-				1237E2162A7A27C6001E9069 /* SwiftProtobuf */,
-				1237E2182A7A27C6001E9069 /* SwiftProtobufPluginLibrary */,
-				1237E21A2A7A27C6001E9069 /* protoc-gen-swift */,
-				1275EE9B2A825AD800C8A958 /* CGRPCZlib */,
-				1275EE9D2A825AD800C8A958 /* GRPC */,
-				1275EE9F2A825AD800C8A958 /* protoc-gen-grpc-swift */,
+				12A1552C2A83C3CB00CD1580 /* Markdown */,
+				12A1552E2A83C3CB00CD1580 /* RoomTime */,
 			);
 			productName = Fluent;
 			productReference = 12E968262A74E52A00859D2D /* Fluent.app */;
@@ -350,8 +341,7 @@
 			);
 			mainGroup = 12E9681D2A74E52A00859D2D;
 			packageReferences = (
-				1237E2152A7A27C6001E9069 /* XCRemoteSwiftPackageReference "swift-protobuf" */,
-				1275EE9A2A825AD800C8A958 /* XCRemoteSwiftPackageReference "grpc-swift" */,
+				12A1552B2A83C3CB00CD1580 /* XCRemoteSwiftPackageReference "RoomTime" */,
 			);
 			productRefGroup = 12E968272A74E52A00859D2D /* Products */;
 			projectDirPath = "";
@@ -400,6 +390,7 @@
 				1255266D2A7CFB0A00DF2AE0 /* WordInsertionsWithAnswersView.swift in Sources */,
 				1275EE992A82468C00C8A958 /* UserLanguagesView.swift in Sources */,
 				12E968672A74F72300859D2D /* AloneExerciseViews.swift in Sources */,
+				12A155132A83A5AB00CD1580 /* LearningView.swift in Sources */,
 				12E968632A74EDA700859D2D /* ExercisesView.swift in Sources */,
 				12479A162A7650BF00EAEEE3 /* WordCardsView.swift in Sources */,
 				12E9682C2A74E52A00859D2D /* ContentView.swift in Sources */,
@@ -747,54 +738,26 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1237E2152A7A27C6001E9069 /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+		12A1552B2A83C3CB00CD1580 /* XCRemoteSwiftPackageReference "RoomTime" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-protobuf.git";
+			repositoryURL = "https://github.com/RainbowTalaxy/RoomTime.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		1275EE9A2A825AD800C8A958 /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/grpc/grpc-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 0.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1237E2162A7A27C6001E9069 /* SwiftProtobuf */ = {
+		12A1552C2A83C3CB00CD1580 /* Markdown */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1237E2152A7A27C6001E9069 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
-			productName = SwiftProtobuf;
+			package = 12A1552B2A83C3CB00CD1580 /* XCRemoteSwiftPackageReference "RoomTime" */;
+			productName = Markdown;
 		};
-		1237E2182A7A27C6001E9069 /* SwiftProtobufPluginLibrary */ = {
+		12A1552E2A83C3CB00CD1580 /* RoomTime */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1237E2152A7A27C6001E9069 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
-			productName = SwiftProtobufPluginLibrary;
-		};
-		1237E21A2A7A27C6001E9069 /* protoc-gen-swift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1237E2152A7A27C6001E9069 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
-			productName = "protoc-gen-swift";
-		};
-		1275EE9B2A825AD800C8A958 /* CGRPCZlib */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1275EE9A2A825AD800C8A958 /* XCRemoteSwiftPackageReference "grpc-swift" */;
-			productName = CGRPCZlib;
-		};
-		1275EE9D2A825AD800C8A958 /* GRPC */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1275EE9A2A825AD800C8A958 /* XCRemoteSwiftPackageReference "grpc-swift" */;
-			productName = GRPC;
-		};
-		1275EE9F2A825AD800C8A958 /* protoc-gen-grpc-swift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1275EE9A2A825AD800C8A958 /* XCRemoteSwiftPackageReference "grpc-swift" */;
-			productName = "protoc-gen-grpc-swift";
+			package = 12A1552B2A83C3CB00CD1580 /* XCRemoteSwiftPackageReference "RoomTime" */;
+			productName = RoomTime;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

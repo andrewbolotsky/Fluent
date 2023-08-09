@@ -30,7 +30,7 @@ extension WordCards{
                 }
             }
             Spacer()
-        }.shadow(color:Color("FontColor"),radius: 30)
+        }
     }
     private func changeStack(card:Card,isUserKnowsWord:Bool){
         if isUserKnowsWord{
@@ -104,7 +104,7 @@ extension WordCards{
                         }
                     }.background().frame(height:400).border(Color("FontColor")).clipShape(RoundedRectangle(cornerRadius: 10)).frame(maxWidth:600).frame(maxHeight:600).frame(minWidth:300).frame(minHeight:300)
                     Spacer()
-                }.shadow(color:Color("FontColor"),radius: 30)
+                }
                 autoHidingNextButton()
                 
             }
