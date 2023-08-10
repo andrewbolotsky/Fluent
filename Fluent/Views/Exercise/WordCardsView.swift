@@ -14,19 +14,21 @@ extension WordCards{
             Spacer()
             VStack{
                 if showTranslate{
-                    Button{
+                    Button(action: {
                         currentCard = getNewCard()
                         showTranslate = false
-                    }label:{
-                        Spacer()
-
-                        Image(systemName: "arrowshape.right").padding(.vertical,10).foregroundColor(.accentColor).dynamicTypeSize(.xxxLarge)
-                       
-                        Spacer()
-                    }.padding().font(.title).background(Color("VeryLightGray")).frame(height: 60).clipShape(RoundedRectangle(cornerRadius: 10)).frame(maxWidth:600).frame(minWidth:300)
+                    }) {
+                        Text("Submit")
+                            .font(.subheadline)
+                            .padding()
+                            .background(
+                                 Color.accentColor)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
                 }
                 else{
-                    Spacer().frame(height:100)
+                    Spacer().frame(height:70)
                 }
             }
             Spacer()
@@ -71,10 +73,10 @@ extension WordCards{
                         HStack{
                             Spacer()
                             if showTranslate{
-                                Text(card.wordFrom).font(.largeTitle).foregroundColor(Color("FontColor"))
+                                Text(card.wordFrom).font(.largeTitle).bold()
                             }
                             else{
-                                Text(card.wordTo).font(.largeTitle).foregroundColor(Color("FontColor"))
+                                Text(card.wordTo).font(.largeTitle).bold()
                             }
                             Spacer()
                         }
@@ -87,22 +89,22 @@ extension WordCards{
                                 changeStack(card:card,isUserKnowsWord: true)
                             }label:{
                                 Spacer()
-                                Image(systemName: "checkmark").foregroundColor(.accentColor).padding().dynamicTypeSize(.xxxLarge)
+                                Image(systemName: "checkmark").foregroundColor(.white).padding().dynamicTypeSize(.xxxLarge)
                         
                                 Spacer()
                                
-                            }.background(Color("VeryLightGray"))
+                            }.background(Color("AccentColor"))
                             Button{
                                 showTranslate = true
                                 changeStack(card:card,isUserKnowsWord: false)
                             }label:{
                                 Spacer()
-                                Image(systemName: "xmark").foregroundColor(.accentColor).padding()
+                                Image(systemName: "xmark").foregroundColor(.white).padding()
                                     .dynamicTypeSize(.xxxLarge)
                                 Spacer()
-                            }.background(Color("VeryLightGray"))
+                            }.background(Color("AccentColor"))
                         }
-                    }.background().frame(height:400).border(Color("FontColor")).clipShape(RoundedRectangle(cornerRadius: 10)).frame(maxWidth:600).frame(maxHeight:600).frame(minWidth:300).frame(minHeight:300)
+                    }.background().frame(height:400).border(Color(.black)).clipShape(RoundedRectangle(cornerRadius: 10)).frame(maxWidth:600).frame(maxHeight:600).frame(minWidth:300).frame(minHeight:300)
                     Spacer()
                 }
                 autoHidingNextButton()

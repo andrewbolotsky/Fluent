@@ -15,23 +15,25 @@ extension WordInsertion{
             Spacer()
             Spacer()
             Spacer()
-            Text(descriptionLeft+" "+String(repeatElement("_", count: correctWord.count))+" "+descriptionRight)
+            Text(descriptionLeft+" "+String(repeatElement("_", count: correctWord.count))+" "+descriptionRight).font(.title)
                 .multilineTextAlignment(.leading)
             Spacer()
             Spacer()
             Spacer()
 
 
-        }.frame(height: 150).multilineTextAlignment(.leading)
+        }
     }
     func wordEntering()->some View{
         return HStack{
             Spacer()
             Spacer()
             Spacer()
-            Text("Enter missing word:")
-            TextField("",text:$insertedWord).lineLimit(1).foregroundColor(.accentColor).padding()
-                .border(Color.accentColor).onReceive(Just($insertedWord)){
+            Text("Word:").font(.title).bold()
+            TextField("",text:$insertedWord).lineLimit(1).foregroundColor(.white).padding()
+                .border(Color.accentColor).background(Color.accentColor).font(.title)
+                .padding().multilineTextAlignment(.center)
+                .cornerRadius(10).onReceive(Just($insertedWord)){
                     _ in formatText(correctWord.count)
                 }
             Spacer()
@@ -42,12 +44,17 @@ extension WordInsertion{
     func bottomView()->some View{
             
                 VStack{
-                    Button{
+                    Button(action: {
                         isSubmitted = true
-                    }label:{
+                    }) {
                         Text("Submit")
-                            .foregroundColor(Color("AccentColor")).font(.title)
-                    }.frame(width:400).background(Color("LightGray")).clipShape(RoundedRectangle.init(cornerRadius: 10)).buttonStyle(.bordered).shadow(radius: 30).padding()
+                            .font(.subheadline)
+                            .padding()
+                            .background(
+                                isSubmitted == false || insertedWord == "" || insertedWord == correctWord ? Color.accentColor: Color.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
                     if isSubmitted != nil && isSubmitted! {
                         CorrectnessLabel(isUserAnswerCorrect: $insertedWord.wrappedValue == correctWord)
                     }
@@ -62,7 +69,7 @@ extension WordInsertion{
     }
     var body: some View{
         VStack{
-            if isSubmitted != nil && isSubmitted! && $insertedWord.wrappedValue  == correctWord{
+            if isSubmitted == true && insertedWord  == correctWord{
                 showNextButton(exerciseIndex: $exerciseIndex)
             }
             else{
@@ -72,7 +79,7 @@ extension WordInsertion{
                     VStack{
                         self.textExercise()
                         self.wordEntering().padding(.bottom)
-                    }.background(Color("VeryLightGray")).clipShape(RoundedRectangle(cornerRadius: 10)).shadow(radius: 30)
+                    }
                     Spacer()
                     
                 }

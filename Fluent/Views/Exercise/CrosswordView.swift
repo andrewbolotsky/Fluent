@@ -7,7 +7,7 @@
 import SwiftUI
 fileprivate struct CrosswordGameView: View {
     @StateObject var crosswordGame:CrosswordGame
-    
+    @State var isSubmitted = false
     var body: some View {
         if crosswordGame.isCorrect != true{
             VStack {
@@ -21,8 +21,17 @@ fileprivate struct CrosswordGameView: View {
                         Text("\(index): \(crosswordGame.hints[index])").font(.subheadline)
                     }
                 }.listStyle(.inset).frame(height:CGFloat(60*crosswordGame.hints.count))
-                Button("Submit", action: crosswordGame.checkAnswers)
-                    .padding()
+                Button(action: {
+                    crosswordGame.checkAnswers()
+                }) {
+                    Text("Submit")
+                        .font(.subheadline)
+                        .padding()
+                        .background(
+                            isSubmitted == false || crosswordGame.isCorrect == nil || crosswordGame.isCorrect == true ? Color.accentColor: Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
                 if crosswordGame.isCorrect != nil{
                     if crosswordGame.isCorrect!{
                         Text("You are right")

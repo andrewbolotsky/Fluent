@@ -101,7 +101,7 @@ struct ContentView: View {
                                       | author   | String | The author ...         |
 
                                       """
-                                                                                                         )]
+                                                                                                         ), WordInsertionWithAnswerOptions(id: UUID().hashValue, complexity: 23, languageFrom: .Russian, languageTo: .English, descriptionLeft: "Who ", descriptionRight: "Mr. James", correctWord: "is", answersOptions: ["are","is","him","what"]),SpeakingExercise(id: UUID().hashValue, complexity: 10, languageFrom: .Russian, languageTo: .English,correctAnswer: "Some people think, but some people don't")]
                                                                     )
                                                             ,Lesson(name:"Second Lesson",complexity: .A1,exercises: [WordCards(id:1231,complexity: 40,languageFrom: .Russian,languageTo: .English,cards:
                                                                                                                                 [WordCards.Card(wordFrom: "лошадь", wordTo: "horse"),WordCards.Card(wordFrom: "курица", wordTo: "chicken"),WordCards.Card(wordFrom: "мама", wordTo: "mother")]),WordInsertion(id: 12121231, complexity: 123, languageFrom: .Russian, languageTo: .English, descriptionLeft: "Lorem ipsum dolor sit armet qwer qqq weew wewq qwe qqq qqq w e r w w q w e", descriptionRight: "lorem ipsum dolor sit armet qwer qqq weew wewq qwe qqq qqq w e r w w q w e", correctWord: "qwerty")]

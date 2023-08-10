@@ -20,19 +20,18 @@ extension Lesson: View {
                          
                          case .WordCards:
                         WordCards(exercises[course.exercisesIndex] as! WordCards, index: $course.exercisesIndex)
-                        /*
+                        
                          case .Speaking:
-                         (exercises[course.exercisesIndex] as! SpeakingExercise).onAppear {
-                         (exercises[course.exercisesIndex] as! SpeakingExercise).exerciseIndex = $course.exercisesIndex
-                         }
+                         SpeakingExercise(exercises[course.exercisesIndex] as! SpeakingExercise,index: $course.exercisesIndex)
+                        /*
                          case .Reading:
                          (exercises[course.exercisesIndex] as! Reading).onAppear {
                          (exercises[course.exercisesIndex] as! Reading).exerciseIndex = $course.exercisesIndex
                          }
+                         */
                          case .WordInsertionWithAnswerOptions:
-                         (exercises[course.exercisesIndex] as! WordInsertionWithAnswerOptions).onAppear {
-                         (exercises[course.exercisesIndex] as! WordInsertionWithAnswerOptions).exerciseIndex = $course.exercisesIndex
-                         }
+                        WordInsertionWithAnswerOptions(exercises[course.exercisesIndex] as! WordInsertionWithAnswerOptions,index:$course.exercisesIndex)
+                         /*
                          case .Listening:
                          ComingSoonView()
                          */

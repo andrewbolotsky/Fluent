@@ -20,6 +20,12 @@
 		12A155132A83A5AB00CD1580 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A155122A83A5AB00CD1580 /* LearningView.swift */; };
 		12A1552D2A83C3CB00CD1580 /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 12A1552C2A83C3CB00CD1580 /* Markdown */; };
 		12A1552F2A83C3CB00CD1580 /* RoomTime in Frameworks */ = {isa = PBXBuildFile; productRef = 12A1552E2A83C3CB00CD1580 /* RoomTime */; };
+		12A155372A83DBA400CD1580 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 12A155362A83DBA400CD1580 /* SwiftProtobuf */; };
+		12A155392A83DBA400CD1580 /* SwiftProtobufPluginLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 12A155382A83DBA400CD1580 /* SwiftProtobufPluginLibrary */; };
+		12A1553B2A83DBA400CD1580 /* protoc-gen-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 12A1553A2A83DBA400CD1580 /* protoc-gen-swift */; };
+		12A1553E2A83DBCF00CD1580 /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = 12A1553D2A83DBCE00CD1580 /* CGRPCZlib */; };
+		12A155402A83DBCF00CD1580 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 12A1553F2A83DBCF00CD1580 /* GRPC */; };
+		12A155422A83DBCF00CD1580 /* protoc-gen-grpc-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 12A155412A83DBCF00CD1580 /* protoc-gen-grpc-swift */; };
 		12C6CB062A784E1E0066560A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6CB052A784E1E0066560A /* AccountView.swift */; };
 		12E721752A7F01BC00F7162F /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E721742A7F01BC00F7162F /* Localization.swift */; };
 		12E9682A2A74E52A00859D2D /* FluentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E968292A74E52A00859D2D /* FluentApp.swift */; };
@@ -93,8 +99,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12A1553B2A83DBA400CD1580 /* protoc-gen-swift in Frameworks */,
+				12A155392A83DBA400CD1580 /* SwiftProtobufPluginLibrary in Frameworks */,
 				12A1552F2A83C3CB00CD1580 /* RoomTime in Frameworks */,
 				12A1552D2A83C3CB00CD1580 /* Markdown in Frameworks */,
+				12A155372A83DBA400CD1580 /* SwiftProtobuf in Frameworks */,
+				12A1553E2A83DBCF00CD1580 /* CGRPCZlib in Frameworks */,
+				12A155422A83DBCF00CD1580 /* protoc-gen-grpc-swift in Frameworks */,
+				12A155402A83DBCF00CD1580 /* GRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +279,12 @@
 			packageProductDependencies = (
 				12A1552C2A83C3CB00CD1580 /* Markdown */,
 				12A1552E2A83C3CB00CD1580 /* RoomTime */,
+				12A155362A83DBA400CD1580 /* SwiftProtobuf */,
+				12A155382A83DBA400CD1580 /* SwiftProtobufPluginLibrary */,
+				12A1553A2A83DBA400CD1580 /* protoc-gen-swift */,
+				12A1553D2A83DBCE00CD1580 /* CGRPCZlib */,
+				12A1553F2A83DBCF00CD1580 /* GRPC */,
+				12A155412A83DBCF00CD1580 /* protoc-gen-grpc-swift */,
 			);
 			productName = Fluent;
 			productReference = 12E968262A74E52A00859D2D /* Fluent.app */;
@@ -342,6 +360,8 @@
 			mainGroup = 12E9681D2A74E52A00859D2D;
 			packageReferences = (
 				12A1552B2A83C3CB00CD1580 /* XCRemoteSwiftPackageReference "RoomTime" */,
+				12A155352A83DBA400CD1580 /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+				12A1553C2A83DBCE00CD1580 /* XCRemoteSwiftPackageReference "grpc-swift" */,
 			);
 			productRefGroup = 12E968272A74E52A00859D2D /* Products */;
 			projectDirPath = "";
@@ -746,6 +766,22 @@
 				minimumVersion = 0.1.0;
 			};
 		};
+		12A155352A83DBA400CD1580 /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-protobuf.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		12A1553C2A83DBCE00CD1580 /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/grpc/grpc-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -758,6 +794,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 12A1552B2A83C3CB00CD1580 /* XCRemoteSwiftPackageReference "RoomTime" */;
 			productName = RoomTime;
+		};
+		12A155362A83DBA400CD1580 /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12A155352A83DBA400CD1580 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
+		};
+		12A155382A83DBA400CD1580 /* SwiftProtobufPluginLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12A155352A83DBA400CD1580 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobufPluginLibrary;
+		};
+		12A1553A2A83DBA400CD1580 /* protoc-gen-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12A155352A83DBA400CD1580 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = "protoc-gen-swift";
+		};
+		12A1553D2A83DBCE00CD1580 /* CGRPCZlib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12A1553C2A83DBCE00CD1580 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = CGRPCZlib;
+		};
+		12A1553F2A83DBCF00CD1580 /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12A1553C2A83DBCE00CD1580 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+		12A155412A83DBCF00CD1580 /* protoc-gen-grpc-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12A1553C2A83DBCE00CD1580 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = "protoc-gen-grpc-swift";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

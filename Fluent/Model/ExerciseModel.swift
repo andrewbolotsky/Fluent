@@ -221,6 +221,17 @@ struct WordInsertionWithAnswerOptions:Exercise{
         self.correctWord = correctWord
         self.answersOptions = answersOptions
     }
+    init (_ wordInsertion:WordInsertionWithAnswerOptions,index:Binding<Int>){
+        self.id = wordInsertion.id
+        self.complexity = wordInsertion.complexity
+        self.languageFrom = wordInsertion.languageFrom
+        self.languageTo = wordInsertion.languageTo
+        self._exerciseIndex = index
+        self.descriptionLeft = wordInsertion.descriptionLeft
+        self.descriptionRight = wordInsertion.descriptionRight
+        self.correctWord = wordInsertion.correctWord
+        self.answersOptions = wordInsertion.answersOptions
+    }
 }
 struct WordInsertion:Exercise{
     var id: Int
@@ -306,8 +317,23 @@ struct SpeakingExercise: Exercise{
     var languageTo:LanguageTo
     @Binding var exerciseIndex: Int
     var type:ExerciseType = .Speaking
-    //TODO
-    
+    var correctAnswer:String
+    init(id: Int, complexity: Int, languageFrom: LanguageFrom, languageTo: LanguageTo, exerciseIndex: Binding<Int> = .constant(0), correctAnswer: String) {
+        self.id = id
+        self.complexity = complexity
+        self.languageFrom = languageFrom
+        self.languageTo = languageTo
+        self._exerciseIndex = exerciseIndex
+        self.correctAnswer = correctAnswer
+    }
+    init(_ speaking:SpeakingExercise, index:Binding<Int>){
+        self.id = speaking.id
+        self.complexity = speaking.complexity
+        self.languageFrom = speaking.languageFrom
+        self.languageTo = speaking.languageTo
+        self._exerciseIndex = index
+        self.correctAnswer = speaking.correctAnswer
+    }    
 }
 struct Learning:Exercise{
     var id:Int
