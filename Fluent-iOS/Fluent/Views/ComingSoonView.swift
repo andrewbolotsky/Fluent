@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ComingSoonView: View {
     var body: some View {
-        VStack{
+        VStack {
             Text("Coming soon.").bold().fontWeight(.heavy)
-            Text("This part of application haven't done yet.")
+            Text(
+                "This part of application haven't done yet."
+            )
         }
     }
 }
