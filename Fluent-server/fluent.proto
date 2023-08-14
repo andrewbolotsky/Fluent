@@ -1,7 +1,9 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
 import "google/protobuf/struct.proto";
-package namespace_proto;
+
+package fluent_proto;
 
 
 enum LanguageLevel{
@@ -84,18 +86,20 @@ message UserFullData{
     Language language_from = 4;
     Language language_to = 5;
 }
-
+message LessonName{
+    string name = 1;
+}
 service Server{
-    rpc SignUp(SignUpData) returns(bool){};
+    rpc SignUp(SignUpData) returns(google.protobuf.Empty){};
     //returns true if user is signed up, else false
     rpc Login(UserData) returns(UserFullData){};
-    rpc AddLanguageToUser(UserFullData) returns(bool){};
+    rpc AddLanguageToUser(UserFullData) returns(google.protobuf.Empty){};
     //returns true if language added, else false
 
     rpc GetCourse(UserGeneralInfo) returns (CourseGeneralInfo){};
 
     rpc GetLesson(CourseGeneralInfo) returns (stream Exercise){};
-    rpc GetLessonName(CourseGeneralInfo) returns (string){};
+    rpc GetLessonName(CourseGeneralInfo) returns (LessonName){};
     //returns lesson name
     rpc LessonIsDone(LessonInfo) returns (CourseGeneralInfo){};
     //returns course general info (after this lesson course could change)
