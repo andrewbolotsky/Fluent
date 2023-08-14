@@ -17,4 +17,14 @@ RUN  export MY_INSTALL_DIR=$HOME/.local && \
         make -j 4 && \
         make install && \
         popd
-ENTRYPOINT ["/bin/sh", "-c", "bash"]
+
+RUN  cd /grpc && \
+            mkdir -p cmake/build && \
+            pushd cmake/build && \
+            apt install -y cmake && \
+            cmake -DgRPC_INSTALL=ON       -DgRPC_BUILD_TESTS=OFF       -DCMAKE_INSTALL_PREFIX=$MY_INSTALL_DIR       ../.. && \
+            make -j 4 && \
+            make install && \
+            popd
+
+RUN apt update && apt install -y gdb
