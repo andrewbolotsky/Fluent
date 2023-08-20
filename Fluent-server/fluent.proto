@@ -1,0 +1,122 @@
+syntax = "proto3";
+
+import "google/protobuf/struct.proto";
+
+package fluent_proto;
+
+
+enum LanguageLevel {
+    LANGUAGE_LEVEL_A1 = 0;
+    LANGUAGE_LEVEL_A2 = 1;
+    LANGUAGE_LEVEL_B1 = 2;
+    LANGUAGE_LEVEL_B2 = 3;
+    LANGUAGE_LEVEL_C1 = 4;
+    LANGUAGE_LEVEL_C2 = 5;
+}
+enum Language {
+    LANGUAGE_ENGLISH = 0;
+    LANGUAGE_RUSSIAN = 1;
+    LANGUAGE_SPANISH = 2;
+    LANGUAGE_FRENCH = 3;
+    LANGUAGE_GERMAN = 4;
+    LANGUAGE_JAPANESE = 5;
+    LANGUAGE_CHINESE = 6;
+    LANGUAGE_POLISH = 7;
+    LANGUAGE_UKRAINIAN = 8;
+    LANGUAGE_ARABIC = 9;
+    LANGUAGE_PORTUGUESE = 10;
+    LANGUAGE_HINDI = 12;
+    LANGUAGE_BENGALI = 13;
+    LANGUAGE_PUNJABI = 14;
+    LANGUAGE_URDU = 15;
+    LANGUAGE_MANDARIN = 16;
+    LANGUAGE_HINDUSTANI = 17;
+    LANGUAGE_INDONESIAN = 18;
+}
+enum ExerciseType {
+    EXERCISE_TYPE_CROSSWORD = 0;
+    EXERCISE_TYPE_WORD_INSERTION_WITH_ANSWER_OPTIONS = 1;
+    EXERCISE_TYPE_WORD_INSERTION = 2;
+    EXERCISE_TYPE_LISTENING = 3;
+    EXERCISE_TYPE_READING = 4;
+    EXERCISE_TYPE_SPEAKING = 5;
+    EXERCISE_TYPE_WORD_CARDS = 6;
+    EXERCISE_TYPE_LEARNING = 7;
+    EXERCISE_TYPE_GENERAL = 8;
+}
+enum Error{
+    ERROR_INCORRECT_LOGIN = 0;
+}
+message UserInfoForCourse {
+    ExerciseType course_type = 1;
+    LanguageLevel level = 2;
+    Language language_to = 3;
+    Language language_from = 4;
+    string email = 5;
+}
+message Exercise {
+    int32 id = 1;
+    int32 complexity = 2;
+    ExerciseType type = 3;
+    Language language_from = 4;
+    Language language_to = 5;
+    string content = 6;
+}
+message SignUpData {
+    string username = 1;
+    string password = 2;
+}
+message CourseGeneralInfo {
+    int32 id = 1;
+    string name = 2;
+    uint32 lessons_count = 3;
+    uint32 user_lesson_index = 4;
+}
+message LessonUserInfo {
+    int32 course_id = 1;
+    string email = 2;
+}
+
+message UserData {
+    string username = 1;
+    string password = 2;
+    Language language_from = 3;
+    Language language_to = 4;
+}
+message UserFullData {
+    string username = 1;
+    string password = 2;
+    LanguageLevel level = 3;
+    Language language_from = 4;
+    Language language_to = 5;
+}
+message LoginInfo {
+    oneof data{
+        Error login_error = 1;
+        UserFullData user_data = 2;
+    }
+}
+message UserCourses{
+    repeated CourseGeneralInfo courses = 1;
+}
+message LessonName {
+    string name = 1;
+}
+message IsCorrectQuery {
+    bool is_correct = 1;
+}
+service Server {
+    rpc SignUp (SignUpData) returns (IsCorrectQuery) {};
+    //returns true if user is signed up, else false
+    rpc Login (UserData) returns (LoginInfo) {};
+    rpc AddLanguageToUser (UserFullData) returns (IsCorrectQuery) {};
+    //returns true if language added, else false
+
+    rpc GetCourses (UserInfoForCourse) returns (UserCourses) {};
+
+    rpc GetLesson (CourseGeneralInfo) returns (stream Exercise) {};
+    rpc GetLessonName (CourseGeneralInfo) returns (LessonName) {};
+    //returns lesson name
+    rpc LessonIsDone (LessonUserInfo) returns (CourseGeneralInfo) {};
+    //returns course general info (after this lesson course could change)
+}

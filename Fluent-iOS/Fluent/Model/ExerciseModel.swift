@@ -97,7 +97,6 @@ enum ExerciseType {
     case Reading
     case Speaking
     case WordCards
-    case VideoLearning
     case Learning
 }
 enum LanguageFrom: Hashable {
