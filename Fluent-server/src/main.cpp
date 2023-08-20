@@ -1,9 +1,7 @@
 //
 // Created by Андрей Болоцкий on 11.08.2023.
 //
-#include<iostream>
+#include "server.hpp"
 int main() {
-    std::cout<<"helloworld";
-    
-    return 0;
+    fluent_server::RunServer("../database.config");
 }
