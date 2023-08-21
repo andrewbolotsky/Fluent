@@ -18,15 +18,22 @@ enum KnowledgeLevel {
     case C2
 }
 class Course: ObservableObject, Identifiable {
-    var id = UUID()
+    var id:Int = UUID().hashValue
     var name = ""
     private var lessons: [Lesson] = Array()
-    private var passedLessonsCount: Int = 0
-    private var allLessonsCount: Int
+    private(set) var allLessonsCount: Int
     @Published var progress: Double = 0
     @Published var newAction = false
     @Published var isLessonDone: Bool = false
     @Published var exercisesIndex: Int = 0
+    var userLessonIndex:Int = 0;
+    init (id:Int,name:String,allLessonsCount:Int, userLessonIndex:Int){
+        self.id = id
+        self.name = name
+        self.lessons = []
+        self.allLessonsCount = allLessonsCount
+        self.userLessonIndex = userLessonIndex
+    }
     init(lessons: [Lesson], allLessonsCount: Int) {
         self.lessons = lessons
         self.allLessonsCount = allLessonsCount
@@ -49,17 +56,13 @@ class Course: ObservableObject, Identifiable {
         lessons.append(lesson)
     }
     var newLesson: Lesson? {
-        lessons.first
+        lessons[userLessonIndex]
     }
     func deleteLesson() {
-        passedLessonsCount += 1
         progress =
-            Double(passedLessonsCount)
+            Double(userLessonIndex)
             / Double(allLessonsCount)
         lessons.removeFirst()
-    }
-    var isCourseDone: Bool {
-        passedLessonsCount == allLessonsCount
     }
 }
 

@@ -41,6 +41,9 @@
 		12E968632A74EDA700859D2D /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E968622A74EDA700859D2D /* ExercisesView.swift */; };
 		12E968652A74F1E500859D2D /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E968642A74F1E500859D2D /* ExerciseModel.swift */; };
 		12E968672A74F72300859D2D /* AloneExerciseViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E968662A74F72300859D2D /* AloneExerciseViews.swift */; };
+		12F16E4E2A929EB300E36079 /* fluent.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F16E4C2A929EB300E36079 /* fluent.pb.swift */; };
+		12F16E4F2A929EB300E36079 /* fluent.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F16E4D2A929EB300E36079 /* fluent.grpc.swift */; };
+		12F16E512A929FC200E36079 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F16E502A929FC200E36079 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,9 @@
 		12E968622A74EDA700859D2D /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
 		12E968642A74F1E500859D2D /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
 		12E968662A74F72300859D2D /* AloneExerciseViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AloneExerciseViews.swift; sourceTree = "<group>"; };
+		12F16E4C2A929EB300E36079 /* fluent.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fluent.pb.swift; sourceTree = "<group>"; };
+		12F16E4D2A929EB300E36079 /* fluent.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fluent.grpc.swift; sourceTree = "<group>"; };
+		12F16E502A929FC200E36079 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,7 @@
 		12E968282A74E52A00859D2D /* Fluent */ = {
 			isa = PBXGroup;
 			children = (
+				12F16E4B2A929E2B00E36079 /* Network */,
 				1237E21C2A7A3E5B001E9069 /* Info.plist */,
 				12E968572A74E5B000859D2D /* Resources */,
 				12E968552A74E56000859D2D /* Views */,
@@ -258,6 +265,16 @@
 				12A155122A83A5AB00CD1580 /* LearningView.swift */,
 			);
 			path = Exercise;
+			sourceTree = "<group>";
+		};
+		12F16E4B2A929E2B00E36079 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				12F16E4D2A929EB300E36079 /* fluent.grpc.swift */,
+				12F16E4C2A929EB300E36079 /* fluent.pb.swift */,
+				12F16E502A929FC200E36079 /* Network.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,18 +424,21 @@
 			files = (
 				125526692A7B8EAF00DF2AE0 /* LessonView.swift in Sources */,
 				12C6CB062A784E1E0066560A /* AccountView.swift in Sources */,
+				12F16E512A929FC200E36079 /* Network.swift in Sources */,
 				1255266D2A7CFB0A00DF2AE0 /* WordInsertionsWithAnswersView.swift in Sources */,
 				1275EE992A82468C00C8A958 /* UserLanguagesView.swift in Sources */,
 				12E968672A74F72300859D2D /* AloneExerciseViews.swift in Sources */,
 				12A155132A83A5AB00CD1580 /* LearningView.swift in Sources */,
 				12E968632A74EDA700859D2D /* ExercisesView.swift in Sources */,
 				12479A162A7650BF00EAEEE3 /* WordCardsView.swift in Sources */,
+				12F16E4F2A929EB300E36079 /* fluent.grpc.swift in Sources */,
 				12E9682C2A74E52A00859D2D /* ContentView.swift in Sources */,
 				1220CAE82A751DB20072530E /* ReadingExerciseView.swift in Sources */,
 				12E9682A2A74E52A00859D2D /* FluentApp.swift in Sources */,
 				1255266B2A7CFAD000DF2AE0 /* CrosswordView.swift in Sources */,
 				12E9685E2A74EAE600859D2D /* ComingSoonView.swift in Sources */,
 				1237E21E2A7A4027001E9069 /* SpeakingView.swift in Sources */,
+				12F16E4E2A929EB300E36079 /* fluent.pb.swift in Sources */,
 				12E968652A74F1E500859D2D /* ExerciseModel.swift in Sources */,
 				12E968602A74ECDE00859D2D /* EntertainmentView.swift in Sources */,
 				12E721752A7F01BC00F7162F /* Localization.swift in Sources */,
