@@ -100,7 +100,7 @@ struct WordInsertionsWithAnswersView_Previews:
     static var previews: some View {
         WordInsertionWithAnswerOptions(
             id: UUID().hashValue, complexity: 23,
-            languageFrom: .Russian, languageTo: .English,
+            languageFrom: .russian, languageTo: .english,
             descriptionLeft: "Who ",
             descriptionRight: "Mr. James",
             correctWord: "is",

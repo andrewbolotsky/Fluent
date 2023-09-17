@@ -179,7 +179,7 @@ struct WordCardsView_Previews: PreviewProvider {
     static var previews: some View {
         WordCards(
             id: 1_231_212, complexity: 40,
-            languageFrom: .Russian, languageTo: .English,
+            languageFrom: .russian, languageTo: .english,
             cards: [
                 WordCards.Card(
                     wordFrom: "лошадь", wordTo: "horse"),

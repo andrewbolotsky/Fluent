@@ -209,7 +209,7 @@ struct CrosswordView_Previews: PreviewProvider {
     static var previews: some View {
         Crossword(
             id: 3432, complexity: 12,
-            languageFrom: .Russian, languageTo: .English,
+            languageFrom: .russian, languageTo: .english,
             exerciseIndex: .constant(0),
             correctAnswers: Array(
                 repeating: Array(repeating: "", count: 4),

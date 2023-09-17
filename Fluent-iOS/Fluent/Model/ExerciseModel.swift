@@ -17,6 +17,8 @@ enum KnowledgeLevel {
     case C1
     case C2
 }
+typealias LanguageTo = FluentProto_Language
+typealias LanguageFrom = FluentProto_Language
 class Course: ObservableObject, Identifiable {
     var id:Int = UUID().hashValue
     var name = ""
@@ -26,43 +28,53 @@ class Course: ObservableObject, Identifiable {
     @Published var newAction = false
     @Published var isLessonDone: Bool = false
     @Published var exercisesIndex: Int = 0
+    weak var states:GlobalStates?
     var userLessonIndex:Int = 0;
-    init (id:Int,name:String,allLessonsCount:Int, userLessonIndex:Int){
+    init (id:Int,name:String,allLessonsCount:Int, userLessonIndex:Int,states:GlobalStates){
         self.id = id
         self.name = name
         self.lessons = []
         self.allLessonsCount = allLessonsCount
         self.userLessonIndex = userLessonIndex
+        self.states = states
     }
-    init(lessons: [Lesson], allLessonsCount: Int) {
+    init(lessons: [Lesson], allLessonsCount: Int,states:GlobalStates) {
         self.lessons = lessons
         self.allLessonsCount = allLessonsCount
+        self.states = states
     }
     init(
         name: String, lessons: [Lesson],
-        allLessonsCount: Int
+        allLessonsCount: Int,states:GlobalStates
     ) {
         self.name = name
         self.lessons = lessons
         self.allLessonsCount = allLessonsCount
+        self.states = states
     }
     func initNewLessonWithNewAction(
         newAction: Binding<Bool>
     ) {
-        lessons[0] = Lesson(
-            lessons[0], newLesson: newAction)
+        let lesson = newLesson
+        if lesson != nil{
+            lessons.append(lesson!)
+            lessons[0] = Lesson(
+                lessons[0], newLesson: newAction)
+        }
     }
     func append(lesson: Lesson) {
         lessons.append(lesson)
     }
     var newLesson: Lesson? {
-        lessons[userLessonIndex]
+         states?.client.getLesson(course: self) ?? nil
     }
     func deleteLesson() {
-        progress =
-            Double(userLessonIndex)
-            / Double(allLessonsCount)
-        lessons.removeFirst()
+        lessons.removeLast()
+        let value = states?.client.lessonIsDone(courseId: self.id, email: states?.username ?? "")
+        self.id = Int(value?.id ?? 0)
+        self.name = value?.name ?? ""
+        self.allLessonsCount = Int(value?.lessonsCount ?? 0)
+        self.userLessonIndex = Int((value?.userLessonIndex ?? 0))
     }
 }
 
@@ -102,16 +114,6 @@ enum ExerciseType {
     case WordCards
     case VideoLearning
     case Learning
-}
-enum LanguageFrom: Hashable {
-    case Russian
-    case English
-    case Spanish
-}
-enum LanguageTo: Hashable {
-    case English
-    case Spanish
-    case Russian
 }
 
 protocol Exercise: Identifiable, View {
@@ -173,7 +175,7 @@ struct WordCards: Exercise {
         var conditionType: Condition = .NewWord
     }
 }
-struct CrosswordCell {
+struct CrosswordCell:Codable {
     var isBlocked: Bool
     var isGuessed: Bool
     var hint: String = ""

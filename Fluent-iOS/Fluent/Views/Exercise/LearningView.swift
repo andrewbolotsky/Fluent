@@ -4,10 +4,9 @@
 //
 //  Created by Андрей Болоцкий on 09.08.2023.
 //
-
-import Markdown
-import RoomTime
 import SwiftUI
+import RoomTime
+import Markdown
 
 struct LearningView: View {
     var text: String
@@ -45,7 +44,7 @@ struct LearningView_Previews: PreviewProvider {
     static var previews: some View {
         Learning(
             id: UUID().hashValue, complexity: 12,
-            languageFrom: .Russian, languageTo: .English,
+            languageFrom: .russian, languageTo: .english,
             markdownText: """
                 # Heading 1
                 ## Heading 2

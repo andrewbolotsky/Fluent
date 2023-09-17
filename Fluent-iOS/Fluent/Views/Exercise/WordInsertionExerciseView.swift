@@ -107,8 +107,8 @@ extension WordInsertion {
 struct WordInsertionExerciseView_Previews: PreviewProvider {
     static var previews: some View {
         WordInsertion(
-            id: 1, complexity: 123, languageFrom: .Russian,
-            languageTo: .English,
+            id: 1, complexity: 123, languageFrom: .russian,
+            languageTo: .english,
             descriptionLeft:
                 "Lorem ipsum dolor sit armet qwer qqq weew wewq qwe qqq qqq w e r w w q w e",
             descriptionRight:
