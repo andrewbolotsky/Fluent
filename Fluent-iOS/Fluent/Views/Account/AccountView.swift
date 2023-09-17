@@ -41,7 +41,7 @@ struct AccountView: View {
                             height: 90)
                     }
                 }.navigationTitle(
-                    "\(states.firstName) \(states.secondName)"
+                    "\(states.username)"
                 ).bold()
             }
         }

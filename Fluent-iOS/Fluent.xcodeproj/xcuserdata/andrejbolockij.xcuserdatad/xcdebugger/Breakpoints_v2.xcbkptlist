@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "70E0F220-B31E-49B2-97D3-DA2ECC832BFF"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "041E3F4F-1834-48F0-91BB-704F3AD2AD0B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fluent/EnvironmentObjects.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "GlobalStates"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "041E3F4F-1834-48F0-91BB-704F3AD2AD0B - dc39c40202346b2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Fluent.GlobalStates.languageFrom : Fluent.LanguageFrom"
+                  moduleName = "Fluent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrejbolockij/XcodeProjects/Fluent/Fluent-iOS/Fluent/EnvironmentObjects.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "041E3F4F-1834-48F0-91BB-704F3AD2AD0B - f8a2c5dfcf61aa07"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fluent.GlobalStates.languageFrom.getter : Fluent.LanguageFrom"
+                  moduleName = "Fluent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrejbolockij/XcodeProjects/Fluent/Fluent-iOS/Fluent/EnvironmentObjects.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "041E3F4F-1834-48F0-91BB-704F3AD2AD0B - 49c1644a92fa661b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fluent.GlobalStates.languageFrom.setter : Fluent.LanguageFrom"
+                  moduleName = "Fluent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrejbolockij/XcodeProjects/Fluent/Fluent-iOS/Fluent/EnvironmentObjects.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "041E3F4F-1834-48F0-91BB-704F3AD2AD0B - 59a60aa4f403ed04"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fluent.GlobalStates.languageFrom.modify : Fluent.LanguageFrom"
+                  moduleName = "Fluent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrejbolockij/XcodeProjects/Fluent/Fluent-iOS/Fluent/EnvironmentObjects.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "041E3F4F-1834-48F0-91BB-704F3AD2AD0B - 405fea2f97486f1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fluent.GlobalStates.languageFrom.modify : Fluent.LanguageFrom with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Fluent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrejbolockij/XcodeProjects/Fluent/Fluent-iOS/Fluent/EnvironmentObjects.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "041E3F4F-1834-48F0-91BB-704F3AD2AD0B - 7d19f58274670262"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fluent.GlobalStates.$languageFrom.getter : Combine.Published&lt;Fluent.LanguageFrom&gt;.Publisher"
+                  moduleName = "Fluent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrejbolockij/XcodeProjects/Fluent/Fluent-iOS/Fluent/EnvironmentObjects.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "041E3F4F-1834-48F0-91BB-704F3AD2AD0B - 13a4fbf27bb26276"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fluent.GlobalStates.$languageFrom.setter : Combine.Published&lt;Fluent.LanguageFrom&gt;.Publisher"
+                  moduleName = "Fluent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrejbolockij/XcodeProjects/Fluent/Fluent-iOS/Fluent/EnvironmentObjects.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "041E3F4F-1834-48F0-91BB-704F3AD2AD0B - 7278664f1fbd5385"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fluent.GlobalStates.$languageFrom.modify : Combine.Published&lt;Fluent.LanguageFrom&gt;.Publisher"
+                  moduleName = "Fluent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrejbolockij/XcodeProjects/Fluent/Fluent-iOS/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "041E3F4F-1834-48F0-91BB-704F3AD2AD0B - 3799289dd8bafc3d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fluent.GlobalStates.$languageFrom.modify : Combine.Published&lt;Fluent.LanguageFrom&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Fluent"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrejbolockij/XcodeProjects/Fluent/Fluent-iOS/Fluent/EnvironmentObjects.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

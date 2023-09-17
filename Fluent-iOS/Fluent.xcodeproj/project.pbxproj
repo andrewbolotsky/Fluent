@@ -17,6 +17,8 @@
 		1270167F2A7D0079001D8099 /* EnvironmentObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270167E2A7D0079001D8099 /* EnvironmentObjects.swift */; };
 		1275EE972A82466D00C8A958 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275EE962A82466D00C8A958 /* SettingsView.swift */; };
 		1275EE992A82468C00C8A958 /* UserLanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275EE982A82468C00C8A958 /* UserLanguagesView.swift */; };
+		12A153B62A9478EB00A94758 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A153B52A9478EB00A94758 /* LoginView.swift */; };
+		12A153B82A94C63300A94758 /* ParseExercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A153B72A94C63300A94758 /* ParseExercises.swift */; };
 		12A155132A83A5AB00CD1580 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A155122A83A5AB00CD1580 /* LearningView.swift */; };
 		12A1552D2A83C3CB00CD1580 /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 12A1552C2A83C3CB00CD1580 /* Markdown */; };
 		12A1552F2A83C3CB00CD1580 /* RoomTime in Frameworks */ = {isa = PBXBuildFile; productRef = 12A1552E2A83C3CB00CD1580 /* RoomTime */; };
@@ -76,6 +78,8 @@
 		1275EE962A82466D00C8A958 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1275EE982A82468C00C8A958 /* UserLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLanguagesView.swift; sourceTree = "<group>"; };
 		1275EEA22A8262B700C8A958 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		12A153B52A9478EB00A94758 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		12A153B72A94C63300A94758 /* ParseExercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseExercises.swift; sourceTree = "<group>"; };
 		12A155122A83A5AB00CD1580 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		12C6CB052A784E1E0066560A /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		12E721742A7F01BC00F7162F /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 				12E968592A74EAAA00859D2D /* Entertainment */,
 				12E968582A74EA8B00859D2D /* Course */,
 				12E9685D2A74EAE600859D2D /* ComingSoonView.swift */,
+				12A153B52A9478EB00A94758 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				12F16E4D2A929EB300E36079 /* fluent.grpc.swift */,
 				12F16E4C2A929EB300E36079 /* fluent.pb.swift */,
 				12F16E502A929FC200E36079 /* Network.swift */,
+				12A153B72A94C63300A94758 /* ParseExercises.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -431,7 +437,9 @@
 				12A155132A83A5AB00CD1580 /* LearningView.swift in Sources */,
 				12E968632A74EDA700859D2D /* ExercisesView.swift in Sources */,
 				12479A162A7650BF00EAEEE3 /* WordCardsView.swift in Sources */,
+				12A153B82A94C63300A94758 /* ParseExercises.swift in Sources */,
 				12F16E4F2A929EB300E36079 /* fluent.grpc.swift in Sources */,
+				12A153B62A9478EB00A94758 /* LoginView.swift in Sources */,
 				12E9682C2A74E52A00859D2D /* ContentView.swift in Sources */,
 				1220CAE82A751DB20072530E /* ReadingExerciseView.swift in Sources */,
 				12E9682A2A74E52A00859D2D /* FluentApp.swift in Sources */,
