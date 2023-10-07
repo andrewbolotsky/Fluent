@@ -13,13 +13,12 @@ typealias Language=FluentProto_Language
 final class FluentClient {
     var port:Int
     var fluentClient: FluentProto_ServerNIOClient?
-    init(port: Int = 42329) {
+    init(port: Int = 50051) {
         self.port = port
         let eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: 1)
         do {
-        // open a channel to the gPRC server
             let channel = try GRPCChannelPool.with(
-        target: .host("localhost", port: self.port), transportSecurity: .plaintext, eventLoopGroup: eventLoopGroup
+        target: .host("0.0.0.0", port: self.port), transportSecurity: .plaintext, eventLoopGroup: eventLoopGroup
         )
             self.fluentClient =
             FluentProto_ServerNIOClient(channel: channel)
@@ -128,7 +127,7 @@ final class FluentClient {
         }
         return result;
     }
-    func getCourses(courseType:FluentProto_ExerciseType,level:Int,languageFrom:Language,languageTo:Language,email:String)->[Course] {
+    func getCourses(courseType:FluentProto_ExerciseType,level:Int,languageFrom:Language,languageTo:Language,email:String,states:GlobalStates)->[Course] {
         let userInfo = FluentProto_UserInfoForCourse.with{
             $0.courseType = courseType
             $0.level = FluentProto_LanguageLevel(rawValue: level) ?? .a1
@@ -147,12 +146,12 @@ final class FluentClient {
         }
         var user_courses:[Course] = []
         for course in result.courses{
-            var current_course = Course(id:Int(course.id),name: course.name, allLessonsCount: Int(course.lessonsCount), userLessonIndex: Int(course.userLessonIndex))
+            let current_course = Course(id:Int(course.id),name: course.name, allLessonsCount: Int(course.lessonsCount), userLessonIndex: Int(course.userLessonIndex),states: states)
             user_courses.append(current_course)
         }
         return user_courses
     }
-    func getLesson(course:Course){
+    func getLesson(course:Course)->Lesson{
         let courseInfo = FluentProto_CourseGeneralInfo.with{
             $0.id = Int32(course.id)
             $0.name = course.name
@@ -160,15 +159,20 @@ final class FluentClient {
             $0.userLessonIndex = UInt32(course.userLessonIndex)
         }
         var result:[FluentProto_Exercise] = []
-        do{
-            var streaming = true;
-            let stream =  self.fluentClient!.getLesson(courseInfo, handler: { exercise in
+        let stream =  self.fluentClient!.getLesson(courseInfo, handler: { exercise in
                 result.append(exercise)
             })
+        
+        
+        var newLesson:Lesson = Lesson(name: getLessonName(courseId: course.id, courseName: course.name, lessonsCount: course.allLessonsCount, userLessonIndex: course.userLessonIndex), complexity: .A1, exercises: [])
+        for value in result{
+            let parsedValue = parseExercise(exercise: value)
+            print(parsedValue)
+            if let data = parsedValue{
+                newLesson.exercises.append(data)
+            }
         }
-        catch {
-            print("RPC method ‘getCourses’ failed: \(error)")
-        }
+        return newLesson
     }
     
     

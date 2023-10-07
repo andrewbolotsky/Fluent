@@ -85,8 +85,8 @@ struct LessonView_Previews: PreviewProvider {
             exercises: [
                 WordCards(
                     id: 1_231_212, complexity: 40,
-                    languageFrom: .Russian,
-                    languageTo: .English,
+                    languageFrom: .russian,
+                    languageTo: .english,
                     cards: [
                         WordCards.Card(
                             wordFrom: "лошадь",
@@ -94,8 +94,8 @@ struct LessonView_Previews: PreviewProvider {
                     ]),
                 WordInsertion(
                     id: 1, complexity: 123,
-                    languageFrom: .Russian,
-                    languageTo: .English,
+                    languageFrom: .russian,
+                    languageTo: .english,
                     descriptionLeft:
                         "Lorem ipsum dolor sit armet qwer qqq weew wewq qwe qqq qqq w e r w w q w e",
                     descriptionRight:

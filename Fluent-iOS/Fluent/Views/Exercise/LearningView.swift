@@ -44,7 +44,7 @@ struct LearningView_Previews: PreviewProvider {
     static var previews: some View {
         Learning(
             id: UUID().hashValue, complexity: 12,
-            languageFrom: .Russian, languageTo: .English,
+            languageFrom: .russian, languageTo: .english,
             markdownText: """
                 # Heading 1
                 ## Heading 2

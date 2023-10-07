@@ -207,7 +207,7 @@ struct SpeakingView_Previews: PreviewProvider {
     static var previews: some View {
         SpeakingExercise(
             id: UUID().hashValue, complexity: 10,
-            languageFrom: .Russian, languageTo: .English,
+            languageFrom: .russian, languageTo: .english,
             correctAnswer:
                 "Some people think, but some people don't")
     }
